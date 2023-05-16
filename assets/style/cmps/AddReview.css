@@ -1,0 +1,16 @@
+
+.add-review{
+    align-items: start;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.add-review input {
+    width: 200px;
+}
+
+.reviews {
+    font-size: 1.5rem;
+}
