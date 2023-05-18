@@ -8,36 +8,45 @@ import ReviewPreview from '../cmps/cmps/ReviewPreview.js'
 export default {
     template: `
         <section v-if="book" class="book-details">
-            <h2 class="title">{{ book.title }}</h2>
-            <h3>Authors: {{ book.authors[0] }}</h3>
-            <h3>Page Count: {{ book.pageCount }} {{ printPageCount }}</h3>
-            <h3>{{book.publishedDate}} {{ printPublishedDate }} Book</h3>
-            <h3 :class="setColorPrice">Price: {{ formattedPrice }}</h3>
-            <h3 v-if="book.listPrice.isOnSale">ON SALE!</h3>
+            <section class="details">
+                <div>
+                    <img :src="book.thumbnail" />
+                </div>
+                
+                <div>
+                    <h2 class="title">{{ book.title }}</h2>
+                    <h3>{{ authors }}</h3>
+                    <h3>{{ printPageCount }}</h3>
+                    <h3>{{ printPublishedDate }} Book</h3>
+                    <h3 :class="setColorPrice">{{ formattedPrice }}</h3>
+                    <h3 v-if="book.listPrice.isOnSale">ON SALE!</h3>
+                    
+                    <LongTxt :txt="book.description" :length="40"/>
+                </div>
+            </section>
 
-            <LongTxt :txt="book.description" :length="40"/>
-            <img :src="book.thumbnail" />
+            <section class="prev-next">
+                <RouterLink :to="'/book/' + book.prevBookId" title="previous book"><i class="fa-solid fa-left-long"></i></RouterLink> 
+                <RouterLink :to="'/book/' + book.nextBookId" title="next book"><i class="fa-solid fa-right-long"></i></RouterLink>
+            </section>
 
             <AddReview  @review="saveReview" :bookId="book.id" />
 
             <section v-if="book.reviews && book.reviews.length > 0">
                 <h1 class="reviews">Reviews</h1>
-                <article v-for="review in book.reviews">
+                <article v-for="review in book.reviews" class="row-review" >
+                    <button @click="removeReview(review.id)"><i class="fa-regular fa-trash-can"></i></button>
                     <ReviewPreview :review="review" 
                    :key="book.id" />
-                    <button @click="removeReview(review.id)">X</button>
                 </article>
             </section>
+
             <section v-else>
                 <h1 class="reviews">Reviews</h1>
-                <p>No reviews yet, be the first one!!!</p>
-                
+                <p>No reviews yet, be the first one</p>
             </section>  
 
-            <RouterLink :to="'/book/' + book.prevBookId">Previous Book</RouterLink> |
-            <RouterLink :to="'/book/' + book.nextBookId">Next Book</RouterLink>
-
-            <RouterLink to="/book">Back to list</RouterLink>
+            <RouterLink class="back" to="/book" title="back to list"><i class="fa-solid fa-circle-arrow-left"></i></RouterLink>
         </section>
     `,
     data() {
@@ -103,7 +112,7 @@ export default {
             return new Intl.NumberFormat('en', { style: 'currency', currency: currencyCode }).format(amount)
         },
         authors() {
-            return this.book.authors
+            return this.book.authors.join()
         }
     },
     created() {

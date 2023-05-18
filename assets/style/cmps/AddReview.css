@@ -1,5 +1,4 @@
-
-.add-review{
+.add-review {
     align-items: start;
     margin-top: 20px;
     display: flex;
@@ -13,4 +12,49 @@
 
 .reviews {
     font-size: 1.5rem;
+}
+
+.review {
+    text-align: center;
+    display: block;
+    margin: auto;
+}
+
+.review h1 {
+    color: #127133;
+    margin-top: 26px;
+}
+
+.review button {
+    width: 200px;
+    height: 20px;
+    background-color: white;
+    border: 1px solid #918c8c;
+    border-radius: 2px;
+}
+
+input::placeholder {
+    text-align: center;
+}
+
+.review-preview {
+    text-align: center;
+    display: flex;
+    gap: 10px;
+}
+
+.review-preview p {
+    margin: 0;
+}
+
+.review-preview span {
+    color: #eaba0c;
+}
+
+.row-review {
+    display: flex;
+}
+
+.row-review button {
+    background-color: white;
 }

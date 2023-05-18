@@ -10,7 +10,7 @@ import { surveyService } from "../../services/survey.service.js"
 export default {
     props: ['bookId'],
     template: `
-    <section>
+    <section class="review">
         <h1>Add a Review</h1>
         <form @submit.prevent="save" class="add-review">
             <input v-model="name"
@@ -28,7 +28,7 @@ export default {
             <button>Save</button>
         </form>
 
-        <section v-if="survey">
+        <!-- <section v-if="survey">
         <h2 :style="{color: survey.color}">{{survey.title}}</h2>
             <form @submit.prevent="save">
                 <div v-for="(cmp, idx) in survey.cmps">
@@ -39,8 +39,8 @@ export default {
                 </div>
                 <button>Save</button>
             </form>
-            <!-- <pre>{{answers}}</pre> -->
-        </section>
+        </section> -->
+        <!-- <pre>{{answers}}</pre> -->
     </section>
     `,
     data() {

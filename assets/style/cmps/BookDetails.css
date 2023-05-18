@@ -1,11 +1,9 @@
 .book-details {
     display: grid;
-    text-align: center;
-
     padding: 10px;
-    background-color: rgb(239, 239, 239);
     margin-block-start: 10px;
 }
+
 .title {
     font-size: 2rem;
 }
@@ -19,6 +17,27 @@
     justify-self: end;
 }
 
+.details {
+    display: flex;
+    justify-content: space-around;
+    gap: 25px;
+}
+
+.prev-next {
+    border-top: 1px solid rgb(137, 135, 135);
+    border-bottom: 1px solid rgb(137, 135, 135);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    color: #127133;
+}
+
+.back {
+    color: #127133;
+    padding: 10px;
+    margin: auto;
+    display: block;
+}
 .green {
     color: green;
 }
@@ -26,4 +45,3 @@
 .red {
     color: red;
 }
-

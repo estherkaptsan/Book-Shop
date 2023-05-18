@@ -11,8 +11,8 @@ export default {
         },
     },
     template: `
-    <section>
-        <h1>Description: {{ readMore }}</h1>
+    <section class="long-txt">
+        <p> {{ readMore }}</p>
         <p v-if="isReadMore">{{ readMore }}</p>
         <button class="btn-read-more" @click="isReadMore = !isReadMore">{{ getBtnText }}</button>
     </section>
@@ -38,5 +38,3 @@ export default {
         },
     }
 }
-
-//TODO: fixied this.txt, read more and less

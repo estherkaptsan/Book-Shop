@@ -42,8 +42,3 @@ function _prepareData(book) {
     return newBook
 }
 
-// googleBooks = [
-//     {txt:'Eran',books:[{1},{2},{4},{5},{6},{7},{8}]},
-//     {txt:'Eran',books:[{1},{2},{4},{5},{6},{7},{8}]},
-//     {txt:'Eran',books:[{1},{2},{4},{5},{6},{7},{8}]},
-// ]

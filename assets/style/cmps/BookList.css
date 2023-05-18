@@ -6,8 +6,30 @@
     padding: 10px;
     list-style-type: none;
 }
-.book-list ul li{
+
+.book-list ul li {
     height: 400px;
     padding: 10px;
-    background-color: rgb(237, 240, 237);
+    /* background-color: rgb(237, 240, 237); */
+}
+
+.book-list .actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateX(-10%);
+    transition-duration: 0.3s;
+    transition-property: transform, opacity;
+    color:  #127133;
+}
+.book-list button {
+    color:  #127133;
+    background-color: #fcfcfa00;
+}
+
+li:hover .actions {
+    opacity: 1;
+    transform: translateX(0);
 }

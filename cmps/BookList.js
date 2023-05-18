@@ -1,15 +1,18 @@
 import BookPreview from './BookPreview.js'
 
 export default {
-    props:['books'],
+    props: ['books'],
     template: `
         <section class="book-list">
             <ul>
                 <li v-for="book in books" :key="book.id">
-                    <BookPreview :book="book"/>
-                    <RouterLink :to="'/book/'+book.id">Details</RouterLink> |
-                    <RouterLink :to="'/book/edit/'+book.id">Edit</RouterLink> |
-                    <button class="remove-book" @click="remove(book.id)">x</button>
+                   <RouterLink :to="'/book/'+book.id">
+                     <BookPreview :book="book"/>
+                   </RouterLink>  
+                   <section class="actions">
+                     <RouterLink :to="'/book/edit/'+book.id"><i class="fa-solid fa-pencil"></i></RouterLink>  
+                     <button class="remove-book" @click="remove(book.id)"><i class="fa-regular fa-trash-can"></i></button>
+                   </section>
                 </li>
             </ul>
         </section>
@@ -31,6 +34,6 @@ export default {
 
     },
     components: {
-            BookPreview,
+        BookPreview,
     }
 }
