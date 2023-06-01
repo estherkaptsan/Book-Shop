@@ -1,0 +1,51 @@
+.home-page {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transform: translateY(25%);
+  }
+
+.home-page h2 {
+    color:#417184;
+    width: 300px;
+    font-size: 31px;
+    font-family: inherit;
+    line-height: 1.12;
+}
+.home-page p {
+    max-width: 450px;
+    margin-bottom: 25px;
+}
+
+.home-page img{
+    height: 500px;
+}
+
+.home-page a {
+    color:#417184;
+    padding: 20px;
+    border: 1px solid #417184;
+    border-radius: 30px;
+    transition: all 1.5s;
+}
+
+
+.home-page a:hover{
+    color: white;
+    background-color: #417184;
+}
+
+.text-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+
+@media only screen and (max-width: 800px) {
+    .home-page {
+        flex-direction: column;
+        transform: translateY(5%);
+    }
+}

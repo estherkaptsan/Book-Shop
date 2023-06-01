@@ -1,8 +1,15 @@
 export default {
     template: `
         <section class="home-page">
-            <h2>Home</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis enim rem porro delectus. Quos expedita ipsam repellendus voluptas quas, nam ea eligendi veniam ullam, modi impedit eveniet quia quaerat molestias?</p>
+            <section class="text-side">
+                <h2>WELCOME TO BOOK STORE </h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sollicitudin, lectus sit amet bibendum dictum, lacus diam sollicitudin est, in eleifend libero eros at nunc. Maecenas in commodo massa, id lacinia turpis. Proin aliquam diam vel mi dignissim, nec rutrum augue efficitur. Nullam cursus quam risus, id molestie nulla dapibus a.</p>
+                <RouterLink to="/book">START NOW</RouterLink>
+            </section>
+            
+            <section class="img-side">
+                <img  src="../../assets/img/home.png"/>
+            </section>
         </section>
     `,
 }

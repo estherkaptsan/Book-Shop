@@ -9,6 +9,7 @@
 
 /* Components */
 @import 'cmps/AppHeader.css';
+@import 'cmps/AppHome.css';
 @import 'cmps/AppFooter.css';
 @import 'cmps/BookList.css';
 @import 'cmps/BookFilter.css';

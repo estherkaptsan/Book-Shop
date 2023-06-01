@@ -22,10 +22,10 @@
     transform: translateX(-10%);
     transition-duration: 0.3s;
     transition-property: transform, opacity;
-    color:  #127133;
+    color:  #417184;
 }
 .book-list button {
-    color:  #127133;
+    color:  #417184;
     background-color: #fcfcfa00;
 }
 
