@@ -10,7 +10,6 @@ let googleBooks = utilService.loadFromStorage(SEARCH_KEY) || {}
 
 function addGoogleBooks(search) {
     if(googleBooks[search]) {
-        console.log('return from storage')
         return Promise.resolve(googleBooks[search])
     }
    
@@ -18,7 +17,6 @@ function addGoogleBooks(search) {
         .then(res => {
             const books = res.data.items.map(item => _prepareData(item))
             googleBooks[search] = books
-            console.log(googleBooks[search]) 
             utilService.saveToStorage(SEARCH_KEY, googleBooks)
             return books
         })

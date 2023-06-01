@@ -32,12 +32,10 @@ export default {
         addBooks() {
             googleService.addGoogleBooks(this.searchedWord)
                 .then(books => {
-                    console.log(books)
                     this.booksSearch = books
                 })
         },
         save(bookId) {
-            console.log(bookId) 
             bookService.save({...this.book})
                 .then(savedBook => {
                     eventBusService.emit('show-msg', { txt: 'Book saved', type: 'success' })

@@ -64,7 +64,6 @@ export default {
             this.$emit('hide-details')
         },
         removeReview(reviewId) {
-            console.log(reviewId)
             bookService.removeReview(this.book.id, reviewId)
                 .then((book) => {
                     eventBusService.emit('show-msg', { txt: 'review removed', type: 'success' })
@@ -75,7 +74,6 @@ export default {
                 })
         },
         saveReview(review) {
-            console.log('review', review)
             bookService.addReview(this.bookId, review)
                 .then(savedBook => {
                     eventBusService.emit('show-msg', { txt: 'Review added', type: 'success' })
@@ -116,8 +114,6 @@ export default {
         }
     },
     created() {
-        console.log('Params:', this.$route.params)
-        // const { bookId } = this.$route.params
        this.loadBook()
     },
     watch: {

@@ -52,7 +52,6 @@ export default {
     created() {
         bookService.query()
             .then(books => {
-                console.log(books)
                 this.books = books
             })
     },
