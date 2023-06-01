@@ -1,6 +1,3 @@
-// import { bookService } from "../../services/book.service.js"
-// import { eventBusService } from '../../services/event-bus.service.js'
-
 import SelectBox from '../SelectBox.js'
 import textBox from '../../cmps/TextBox.js'
 import linearScale from '../../cmps/cmps/LinearScake.js'
@@ -28,19 +25,6 @@ export default {
             <button>Save</button>
         </form>
 
-        <!-- <section v-if="survey">
-        <h2 :style="{color: survey.color}">{{survey.title}}</h2>
-            <form @submit.prevent="save">
-                <div v-for="(cmp, idx) in survey.cmps">
-                    <Component 
-                        :is="cmp.type"  
-                        :info="cmp.info" 
-                        @setVal="setAns($event, idx)" />
-                </div>
-                <button>Save</button>
-            </form>
-        </section> -->
-        <!-- <pre>{{answers}}</pre> -->
     </section>
     `,
     data() {
@@ -60,15 +44,13 @@ export default {
                 readAt: this.date
             }
             this.$emit('review', review)
-        },
-        saveDinamicCmps() {
-            console.log('Saving..', this.answers) 
+            this.name = ''
+            this.rating = ''
+            this.date = ''
+
         },
         setAns(ans, idx) {
-            console.log('Setting the answer: ', ans, 'idx:', idx);
-            // this.answers[idx] = ans
             this.answers.splice(idx, 1, ans)
-            console.log(this.answers)
         },
     },
     created() {
@@ -79,7 +61,6 @@ export default {
             })
     },
     components: {
-        // multiCheck,
         textBox,
         linearScale,
         SelectBox
